@@ -1,0 +1,18 @@
+import numpy as np
+from scipy.optimize import fsolve
+
+# Define the function
+def equation(x):
+    return x * np.exp(x) - 1
+
+# Initial guess for the root
+initial_guess = 0.5
+
+# Use fsolve to find the root
+root = fsolve(equation, initial_guess)
+
+# Check if the root is within the specified range
+if 0 < root < 1:
+    print(f"The root found in the interval (0, 1) is: {root[0]}")
+else:
+    print("No root found in the interval (0, 1).")
